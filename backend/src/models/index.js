@@ -8,8 +8,8 @@ User.hasMany(Attendance, { foreignKey: "userId" });
 User.hasMany(Leave, { foreignKey: "userId" });
 User.hasMany(Payroll, { foreignKey: "userId" });
 
-Attendance.belongsTo(User);
-Leave.belongsTo(User);
-Payroll.belongsTo(User);
+Attendance.belongsTo(User, { foreignKey: "userId" });
+Leave.belongsTo(User, { foreignKey: "userId" });
+Payroll.belongsTo(User, { foreignKey: "userId" });
 
 export { sequelize, User, Attendance, Leave, Payroll };
